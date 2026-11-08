@@ -183,7 +183,9 @@ export function CloudScene() {
         if (cssFont) {
           resolvedFontFamily = cssFont;
         }
-        await document.fonts.load("16px " + resolvedFontFamily);
+        // The next/font fallback face is local(Arial): awaiting it rejects on devices without Arial.
+        const [primaryFontFamily] = resolvedFontFamily.split(",");
+        await document.fonts.load("16px " + primaryFontFamily);
         const mask = await loadCloudMask("/images/cloud.png");
         if (disposed) {
           return;
