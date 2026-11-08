@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #e6e5e3;
+  --color-ink: #121212;
+  --font-typewriter: var(--font-special-elite), "Courier New", monospace;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-typewriter);
+  overflow: hidden;
+}
